@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sldevtaks/hom.page.dart';
+import 'package:sldevtaks/routes.dart';
+import 'pages/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: HomePage(),
+      initialRoute: Home.routeName,
+      routes: routes,
     );
   }
 }
