@@ -18,8 +18,8 @@ class Home extends StatelessWidget {
             SizedBox(
               width: double.infinity,
             ),
-            Text("Tharindu Kavishna", style: TextStyle(fontSize: 18.0),),
-            Text("Tharindu Kavishna", style: TextStyle(fontSize: 18.0),),
+            Text("ආයුබෝවන් Tharindu!", style: TextStyle(fontSize: 48.0),),
+            Text("WelCome to our live room", style: TextStyle(fontSize: 28.0),),
             ElevatedButton(
                 onPressed: () async{
                   String text = await Navigator.of(context).pushNamed(About.routeName, arguments: AboutArguments(name: 'Tharindu kavishna'),) as String;

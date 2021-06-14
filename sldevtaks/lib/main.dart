@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.amber,
+        fontFamily:  "GemunuLibre",
       ),
       initialRoute: Home.routeName,
       routes: routes,
