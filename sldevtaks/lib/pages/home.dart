@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sldevtaks/pages/about.dart';
+import 'package:sldevtaks/pages/rocket.dart';
 
 class Home extends StatelessWidget {
   static const routeName = './home';
@@ -32,6 +33,12 @@ class Home extends StatelessWidget {
                 },
                 child: Text("About"),
             ),
+            OutlinedButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed(RocketPage.routeName);
+                },
+                child: Text("Rocket")
+            )
           ],
         ),
       ),
