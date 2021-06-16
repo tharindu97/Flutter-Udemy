@@ -21,7 +21,13 @@ class _AboutState extends State<About> {
       count++;
     });
   }
- 
+
+  void onDecrement() {
+    setState(() {
+      count--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final AboutArguments aboutArguments = ModalRoute.of(context)?.settings.arguments as AboutArguments;
@@ -38,7 +44,24 @@ class _AboutState extends State<About> {
               width: double.infinity,
             ),
             Text("About Page: ${aboutArguments.name}", style: Theme.of(context).textTheme.headline4,),
-            Text("The count : $count", style: GoogleFonts.chilanka(fontSize: 30), ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: onDecrement,
+                  child: Icon(Icons.remove),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text("The count : $count", style: GoogleFonts.chilanka(fontSize: 30), ),
+                ),
+                ElevatedButton(
+                  onPressed: onIncrement,
+                  child: Icon(Icons.add),
+                ),
+              ],
+            ),
             OutlinedButton(
               onPressed: (){
                 Navigator.of(context).pop();
@@ -47,10 +70,6 @@ class _AboutState extends State<About> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: onIncrement,
-        child: Icon(Icons.add),
       ),
     );
   }
