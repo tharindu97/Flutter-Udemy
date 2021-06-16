@@ -3,11 +3,17 @@ import 'package:sldevtaks/pages/about.dart';
 
 class Home extends StatelessWidget {
   static const routeName = './home';
+  final Function(bool)? toggleDarkMode;
+  final bool? isDark;
+  Home({this.toggleDarkMode, this.isDark});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("SLDevTalks"),
+        actions: [
+          Switch(value: isDark ?? false, onChanged: toggleDarkMode)
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0 , horizontal: 20.0),
@@ -21,9 +27,8 @@ class Home extends StatelessWidget {
             Text("ආයුබෝවන් Tharindu!", style: TextStyle(fontSize: 48.0),),
             Text("WelCome to our live room", style: TextStyle(fontSize: 28.0),),
             ElevatedButton(
-                onPressed: () async{
-                  String text = await Navigator.of(context).pushNamed(About.routeName, arguments: AboutArguments(name: 'Tharindu kavishna'),) as String;
-                  print(text);
+                onPressed: () {
+                   Navigator.of(context).pushNamed(About.routeName, arguments: AboutArguments(name: 'Tharindu kavishna'),);
                 },
                 child: Text("About"),
             ),
