@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sldevtaks/pages/about.dart';
-import 'package:sldevtaks/pages/rocket.dart';
 import 'package:sldevtaks/pages/rockets.dart';
 
 class Home extends StatelessWidget {
@@ -32,7 +31,7 @@ class Home extends StatelessWidget {
                 onPressed: () {
                    Navigator.of(context).pushNamed(About.routeName, arguments: AboutArguments(name: 'Tharindu kavishna'),);
                 },
-                child: Text("About"),
+                child: Flexible(child: Text("About")),
             ),
             OutlinedButton(
                 onPressed: (){
