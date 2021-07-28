@@ -10,21 +10,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ScreenTypeLayout(
-        mobile: Center(
-          child: Container(
-            color: Colors.yellow,
-            height: 100.0,
-            width: 150,
-          ),
-        ),
-        tablet: Center(
-          child: Container(
-            color: Colors.red,
-            height: 100.0,
-            width: 150,
-          ),
-        ),
+      body: ResponsiveBuilder(
+        builder: (context, sizingInformation) {
+          if (sizingInformation.deviceScreenType == DeviceScreenType.tablet) {
+            return Container(color: Colors.yellow);
+          }
+          return Container(color: Colors.purple);
+        },
       ),
     );
   }
