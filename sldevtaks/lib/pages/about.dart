@@ -7,6 +7,7 @@ class AboutArguments{
 }
 
 class About extends StatefulWidget {
+  const About({Key? key}) : super(key: key);
   static const routeName = "/about";
 
   @override
@@ -33,14 +34,14 @@ class _AboutState extends State<About> {
     final AboutArguments aboutArguments = ModalRoute.of(context)?.settings.arguments as AboutArguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text('About'),
+        title: const Text('About'),
       ),
       body: Container(
-        margin: EdgeInsets.all(8.0),
+        margin: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               width: double.infinity,
             ),
             Text("About Page: ${aboutArguments.name}", style: Theme.of(context).textTheme.headline4,),
@@ -50,7 +51,7 @@ class _AboutState extends State<About> {
               children: [
                 ElevatedButton(
                   onPressed: onDecrement,
-                  child: Icon(Icons.remove),
+                  child: const Icon(Icons.remove),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -58,7 +59,7 @@ class _AboutState extends State<About> {
                 ),
                 ElevatedButton(
                   onPressed: onIncrement,
-                  child: Icon(Icons.add),
+                  child: const Icon(Icons.add),
                 ),
               ],
             ),
@@ -66,7 +67,7 @@ class _AboutState extends State<About> {
               onPressed: (){
                 Navigator.of(context).pop();
               },
-              child: Text('Home'),
+              child: const Text('Home'),
             ),
           ],
         ),

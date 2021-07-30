@@ -7,6 +7,7 @@ class RocketArguments {
 }
 
 class RocketPage extends StatelessWidget {
+  const RocketPage({Key? key}) : super(key: key);
   static const routeName = '/rocket';
   @override
   Widget build(BuildContext context) {
@@ -15,20 +16,20 @@ class RocketPage extends StatelessWidget {
     final Rocket rocket = rocketArguments.rocket;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Rocket"),
+        title: const Text("Rocket"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             width: double.infinity,
           ),
           Text(
             rocket.name,
             style: Theme.of(context).textTheme.headline3,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5.0,
           ),
           Text(
@@ -36,7 +37,7 @@ class RocketPage extends StatelessWidget {
             style: Theme.of(context).textTheme.headline5,
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5.0,
           ),
           Image.network(rocket.image),

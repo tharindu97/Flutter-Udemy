@@ -10,10 +10,12 @@ void main() {
   group("Initial Test", () {
 
     setUpAll((){
+      // ignore: avoid_print
       print("SetUp ALL");
     });
 
     setUp((){
+      // ignore: avoid_print
       print("SetUp");
     });
 
@@ -28,10 +30,12 @@ void main() {
     });
 
     tearDown((){
+      // ignore: avoid_print
       print("tearDown");
     });
 
     tearDownAll((){
+      // ignore: avoid_print
       print("tearDown ALL");
     });
 

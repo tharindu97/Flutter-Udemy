@@ -6,7 +6,7 @@ import 'package:sldevtaks/main.dart';
 
 void main() {
   testWidgets("Home", (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(const MyApp());
     expect(find.text(' About'), findsOneWidget);
     // await expectLater(find.byType(Home), matchesGoldenFile("golden/home.png"),);
     final aboutButton = find.byType(ElevatedButton);

@@ -6,12 +6,12 @@ class Home extends StatelessWidget {
   static const routeName = './home';
   final Function(bool)? toggleDarkMode;
   final bool? isDark;
-  Home({this.toggleDarkMode, this.isDark});
+  const Home({Key? key, this.toggleDarkMode, this.isDark}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SLDevTalks"),
+        title: const Text("SLDevTalks"),
         actions: [
           Switch(value: isDark ?? false, onChanged: toggleDarkMode)
         ],
@@ -22,22 +22,22 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               width: double.infinity,
             ),
-            Text("ආයුබෝවන් Tharindu!", style: TextStyle(fontSize: 48.0),),
-            Text("WelCome to our live room", style: TextStyle(fontSize: 28.0),),
+            const Text("ආයුබෝවන් Tharindu!", style: TextStyle(fontSize: 48.0),),
+            const Text("WelCome to our live room", style: TextStyle(fontSize: 28.0),),
             ElevatedButton(
                 onPressed: () {
                    Navigator.of(context).pushNamed(About.routeName, arguments: AboutArguments(name: 'Tharindu kavishna'),);
                 },
-                child: Flexible(child: Text("About")),
+                child: const Flexible(child: Text("About")),
             ),
             OutlinedButton(
                 onPressed: (){
                   Navigator.of(context).pushNamed(Rockets.routeName);
                 },
-                child: Text("Rockets")
+                child: const Text("Rockets")
             )
           ],
         ),

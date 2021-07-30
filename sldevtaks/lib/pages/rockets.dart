@@ -11,24 +11,24 @@ class Rockets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Rockets"),
+        title: const Text("Rockets"),
       ),
       body: FutureBuilder<List<Rocket>?>(
         future: _rocketService.getRockets(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Center(
+            return const Center(
               child: Text("Error...!"),
             );
           } else if (snapshot.hasData) {
             List<Rocket>? rockets = snapshot.data;
             return rockets != null
                 ? RocketsList(rockets: rockets)
-                : Center(
+                :  const Center(
                     child: Text("Nothing to show rockets!.."),
                   );
           }
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         },
